@@ -14,12 +14,17 @@ export class ServerComponent {
     serverId: number = 10;
     serverStatus: string = 'offline';
 
+    constructor() {
+      this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+      this.serverId = Math.floor(Math.random()*100);
+    }
+
     getServerId() {
-        return this.serverId = Math.floor(Math.random()*100);
+        return this.serverId;
     }
 
     getServerStatus() {
-        return this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+        return this.serverStatus;
     }
 
     getColor() {
